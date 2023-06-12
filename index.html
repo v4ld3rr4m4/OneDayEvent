@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+	<title></title>
+	<link href="event.css" rel="stylesheet" />
+</head>
+<body>
+<h1 id="EventTitle"> Place Name of Event here !</h1>
+<div id="App"></div>
+</body>
+
+<script src="event.js"></script>
+<script>
+function createActivity(obj){
+// Activity
+activity=document.createElement("div")
+activity.classList.add('activity')
+// timetag 
+timetag=document.createElement("div")
+timetag.innerText=ourHour(obj.schedule)
+timetag.classList.add('timetag')
+// Detail 
+detail=document.createElement("div")
+detail.classList.add('detail')
+// Title 
+title=document.createElement("div")
+title.innerText=obj.title
+title.classList.add('title')
+detail.appendChild(title)
+// Speaker 
+speaker=document.createElement("div")
+speaker.innerText=obj.speaker
+speaker.classList.add('speaker')
+detail.appendChild(speaker)
+
+
+activity.appendChild(timetag)
+activity.appendChild(detail)
+document.getElementById("App").appendChild(activity)
+}
+function compareByHours(a, b) {
+  let hoursA = parseHours(a.hours);
+  let hoursB = parseHours(b.hours);
+
+  return hoursA - hoursB;
+}
+// Helper function to parse hours from a string
+function parseHours(timeString) {
+  let timeParts = timeString.split(':');
+  let hours = parseInt(timeParts[0], 10);
+  let minutes = parseInt(timeParts[1], 10);
+
+if (hour > 12)
+    return hour-12+":00PM"
+else
+    return hour+":00 AM"
+  return hours + minutes / 60; // Convert minutes to fractional hours
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+document.getElementById("EventTitle").innerText = aEventTitle;
+activities.sort(compareByHours);
+activities.forEach(x=>createActivity(x));
+}
+)
+</script>
+</html>
