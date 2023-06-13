@@ -1,20 +1,28 @@
-const aEventTitle = "Open Free Sofware Day"
+const EventTitle = "Open Free Sofware Day"
+const EventPlace = "Universidad del Istmo"
+const EventDate = "sàbado 24 de Junio"
 
 activities = [
     {
-     "schedule":12,
+     "hour":"12:00PM",
      "title":"RECESO",
      "speaker": " ",
-     "tags":['docker','devops']
+     "tags":[]
     },
     {
-     "schedule":9,
+     "hour":"2:00PM",
      "title":"Dockerinzando cron",
-     "speaker": "Ismael Valderrama",
+     "speaker": "Leonel Messi",
      "tags":['docker','devops']
     },
     {
-     "schedule":16,
+     "hour":"10:00AM",
+     "title":"Hablemos de SELINUX",
+     "speaker": "Cecilio Waterman",
+     "tags":['sysadmin']
+    },
+    {
+     "hour":"8:00AM",
      "title":"API REST - open doors  for haking, lets talk about JWT",
      "speaker": "Lucas Modrick",
      "tags":['docker','devops']

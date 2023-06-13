@@ -9,7 +9,12 @@
 	<link href="event.css" rel="stylesheet" />
 </head>
 <body>
-<h1 id="EventTitle"> Place Name of Event here !</h1>
+<div id="Event" >
+<div id="EventTitle"> Place Name of Event here !</div>
+<div id="EventPlace"> Place Place of Event here !</div>
+<div id="EventDate"> Place Date of Event here !</div>
+</div>
+
 <div id="App"></div>
 </body>
 
@@ -21,8 +26,23 @@ activity=document.createElement("div")
 activity.classList.add('activity')
 // timetag 
 timetag=document.createElement("div")
-timetag.innerText=ourHour(obj.schedule)
 timetag.classList.add('timetag')
+// hour 
+hour=document.createElement("div")
+hour.innerText=obj.hour
+hour.classList.add('hour')
+// tags 
+tags=document.createElement("div")
+tags.classList.add('tags')
+obj.tags.forEach( x => {
+    tag = document.createElement("span")
+    tag.innerText=x
+    tags.appendChild(tag)
+    });
+timetag.appendChild(hour)
+timetag.appendChild(tags)
+
+
 // Detail 
 detail=document.createElement("div")
 detail.classList.add('detail')
@@ -43,8 +63,8 @@ activity.appendChild(detail)
 document.getElementById("App").appendChild(activity)
 }
 function compareByHours(a, b) {
-  let hoursA = parseHours(a.hours);
-  let hoursB = parseHours(b.hours);
+  let hoursA = parseHours(a.hour);
+  let hoursB = parseHours(b.hour);
 
   return hoursA - hoursB;
 }
@@ -53,16 +73,18 @@ function parseHours(timeString) {
   let timeParts = timeString.split(':');
   let hours = parseInt(timeParts[0], 10);
   let minutes = parseInt(timeParts[1], 10);
+  if (timeParts[1].toLowerCase().indexOf("pm") > 0)
+    if (hours != 12)
+        hours = hours + 12
 
-if (hour > 12)
-    return hour-12+":00PM"
-else
-    return hour+":00 AM"
+
   return hours + minutes / 60; // Convert minutes to fractional hours
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-document.getElementById("EventTitle").innerText = aEventTitle;
+document.getElementById("EventTitle").innerText = EventTitle;
+document.getElementById("EventDate").innerText = EventDate;
+document.getElementById("EventPlace").innerText = EventPlace;
 activities.sort(compareByHours);
 activities.forEach(x=>createActivity(x));
 }

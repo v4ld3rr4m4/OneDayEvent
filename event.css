@@ -1,10 +1,22 @@
-#EventTitle{ padding-top:50px;padding-bottom:50px; background:#F8A000;
-            text-align:center;
-            }
+#Event{ padding-top:10px;
+        padding-bottom:10px; 
+        background:#FFF;
+        text-align:center; 
+        display:flex;
+        flex-wrap:wrap;
+        width:100%; 
+        margin-bottom:20px;
+      }
+            
+#EventTitle{ padding:5px; background:#F8A000; font-size:30pt; text-align:center;width:100%;}
+#EventPlace{ padding:5px; background:#FFF; font-size:25pt;color:darkblue; text-align:right; min-width:48%;}
+#EventDate{ padding:5px; background:#FFF; font-size:25pt;color:darkblue; text-align:left; min-width:48%;}
 
 .activity {display:flex; margin-bottom:10px; background: #eee; padding:20px;}
 
-.activity .timetag{min-width:20%; display:fle; align-items:flex-start;}
+.activity .timetag{min-width:15%;border:solid 0px gray; display:flex;flex-direction:column;justify-content:space-around;align-items:flex-start;}
+.activity .timetag .hour{color:#700;margin-bottom:10px;}
+.activity .timetag .tags span{margin-right:2px;font-size: 12px; background-color:#1338BE; border-radius:8px;padding:6px;color:#fff;}
 
 .activity .detail{min-width:60%;align-items:center;}
 .activity .detail .title{font-size:14pt;}
