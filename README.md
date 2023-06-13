@@ -4,7 +4,7 @@
 
 Programa/Agenda de tu evento estructurado mediante un sistema tipo --> *vanillaJS (HTML,CSS y JS)*
 
-mira aqu&iacute; -> [index.html]('https://v4ld3rr4m4.github.io/OneDayEvent/')
+mira aqu&iacute; -> [index.html](https://v4ld3rr4m4.github.io/OneDayEvent)
 <br>
 
 ## C&oacute;mo ?
